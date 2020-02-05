@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+   http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>login</display-name><!-- プロジェクト名 -->
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file><!-- ★実行後一番最初に表示されるJSPファイル＝初期画面にしたいJSPファイル名を書く -->
+  </welcome-file-list>
+
+
+
+  <!-- ここから下の内容で、「このプロジェクトでstrus2というテンプレを使うよ、範囲はプロジェクト全体だよ」という意味になる -->
+
+  <filter>
+  	<filter-name>struts2</filter-name><!-- ■同じ内容 -->
+  	<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+ 	<!-- ↑この中身はStrutsの制御担当クラス（固定） -->
+  </filter>
+
+  <filter-mapping>
+  	<filter-name>struts2</filter-name><!-- ■同じ内容 -->
+  	<url-pattern>/*</url-pattern><!-- 適用する範囲(URL)このプロジェクト配下(/)のすべてのページ(*)を指す -->
+  </filter-mapping>
+</web-app>
+
+<!-- ①一番最初に実行されるファイル　②★login.jsp -->

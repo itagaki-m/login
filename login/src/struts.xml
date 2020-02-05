@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true"/>
+	<package name="com.internousdev.login.action" extends="struts-default">
+	<action name="LoginAction" class="com.internousdev.login.action.LoginAction" method="execute">
+	<!-- 10行目■LoginActionとはどこか明記されている＆LoginActionのどのメソッドに飛ぶかも書いてある -->
+		<result name="success">loginSuccess.jsp</result>
+		<result name="error">loginError.jsp</result>
+	</action>
+	</package>
+</struts>
+
+<!-- 前：②login.jsp　③　次：④■LoginAction -->
+<!-- 前：⑦LoginAction　⑧　次： ⑨loginSuccess.jspかloginError.jspへ-->
